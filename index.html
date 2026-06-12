@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Portfolio of Makokha Ramadhan Juma - BBIT student at Mount Kenya University, aspiring Cybersecurity & Networking Professional. Showcasing skills, projects, and experience in enterprise computing.">
+  <meta name="author" content="Makokha Ramadhan Juma">
+  <meta name="theme-color" content="#0a0f1c">
+  <title>Makokha Ramadhan Juma | BBIT Student | Cybersecurity & Networking</title>
+  <!-- Font Awesome 6 (Free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts: Inter + Fira Code -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0a0f1c;
+      color: #eef2ff;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #141c2c;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #2a6f8f;
+      border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #3b9bcb;
+    }
+
+    /* container */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* reusable sections */
+    section {
+      padding: 80px 0;
+      border-bottom: 1px solid rgba(56, 189, 248, 0.1);
+    }
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      position: relative;
+      display: inline-block;
+      background: linear-gradient(135deg, #c1e4ff, #3b9bcb);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      letter-spacing: -0.01em;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60%;
+      height: 3px;
+      background: linear-gradient(90deg, #2a6f8f, #6fc3df);
+      border-radius: 3px;
+    }
+
+    /* buttons & glass effect */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 28px;
+      border-radius: 40px;
+      font-weight: 600;
+      transition: all 0.25s ease;
+      text-decoration: none;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+    }
+    .btn-primary {
+      background: linear-gradient(105deg, #1e4b6e, #0f2c3f);
+      color: white;
+      box-shadow: 0 8px 20px rgba(0, 180, 216, 0.2);
+      border: 1px solid rgba(59, 155, 203, 0.5);
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(0, 180, 216, 0.3);
+      background: linear-gradient(105deg, #2a6f8f, #1a4d66);
+      border-color: #3b9bcb;
+    }
+    .btn-outline {
+      border: 1.5px solid #3b9bcb;
+      color: #cde9ff;
+    }
+    .btn-outline:hover {
+      background: rgba(59, 155, 203, 0.15);
+      transform: translateY(-2px);
+      border-color: #6fc3df;
+    }
+
+    /* navbar */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+      background: rgba(10, 15, 28, 0.85);
+      border-bottom: 1px solid rgba(59, 155, 203, 0.2);
+      padding: 18px 0;
+    }
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .logo {
+      font-size: 1.7rem;
+      font-weight: 700;
+      background: linear-gradient(145deg, #ffffff, #70c8f0);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      letter-spacing: -0.5px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #cdd9f4;
+      font-weight: 500;
+      transition: 0.2s;
+      font-size: 0.95rem;
+    }
+    .nav-links a:hover {
+      color: #6fc3df;
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+    }
+
+    /* hero */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 40px;
+      justify-content: space-between;
+    }
+    .hero-content {
+      flex: 1;
+    }
+    .hero-badge {
+      background: rgba(59, 155, 203, 0.2);
+      border-left: 3px solid #3b9bcb;
+      padding: 6px 14px;
+      border-radius: 30px;
+      display: inline-block;
+      font-size: 0.85rem;
+      margin-bottom: 20px;
+    }
+    .hero-content h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin: 20px 0;
+      background: linear-gradient(to right, #ffffff, #9ad4f0);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .hero-desc {
+      font-size: 1.1rem;
+      color: #b9c7e0;
+      max-width: 550px;
+      margin: 20px 0 30px;
+    }
+    .cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+    .hero-image {
+      flex: 0.8;
+      text-align: center;
+    }
+    .img-placeholder {
+      width: 280px;
+      height: 280px;
+      background: linear-gradient(135deg, #16212e, #0b1622);
+      border-radius: 40% 60% 70% 30% / 40% 50% 50% 60%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.5), inset 0 1px 1px rgba(255,255,255,0.05);
+      border: 1px solid rgba(59, 155, 203, 0.4);
+    }
+    .img-placeholder i {
+      font-size: 6rem;
+      color: #3b9bcb;
+      opacity: 0.8;
+    }
+
+    /* Skills grid + cards */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+      margin-top: 20px;
+    }
+    .skill-card {
+      background: rgba(18, 25, 40, 0.7);
+      backdrop-filter: blur(2px);
+      border-radius: 32px;
+      padding: 28px 20px;
+      border: 1px solid rgba(59, 155, 203, 0.2);
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .skill-card:hover {
+      transform: translateY(-5px);
+      border-color: #3b9bcb;
+    }
+    .skill-icon {
+      font-size: 2.5rem;
+      color: #6fc3df;
+      margin-bottom: 16px;
+    }
+    .skill-card h3 {
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .skill-tag {
+      background: #0f1825;
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #c2dcff;
+      border: 0.5px solid #2a6f8f;
+    }
+
+    /* experience, education, certs */
+    .exp-item, .edu-item, .cert-card {
+      background: rgba(12, 18, 28, 0.6);
+      border-radius: 24px;
+      padding: 24px;
+      margin-bottom: 24px;
+      border-left: 4px solid #3b9bcb;
+      transition: all 0.2s;
+    }
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 24px;
+    }
+    .cert-card {
+      text-align: center;
+      border-left: none;
+      border-top: 2px solid #2a6f8f;
+    }
+    /* projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 30px;
+    }
+    .project-card {
+      background: #0f1725;
+      border-radius: 28px;
+      padding: 24px;
+      transition: 0.2s;
+      border: 1px solid #1e2a3a;
+    }
+    .project-card:hover {
+      transform: translateY(-6px);
+      border-color: #3b9bcb;
+      box-shadow: 0 20px 30px -12px rgba(0,0,0,0.4);
+    }
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 15px 0;
+    }
+    .tech-badge {
+      background: #1e2c3c;
+      font-size: 0.7rem;
+      padding: 4px 12px;
+      border-radius: 30px;
+    }
+    .project-links a {
+      color: #6fc3df;
+      margin-right: 20px;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    /* github stats */
+    .github-stats {
+      background: #0c1220;
+      border-radius: 32px;
+      padding: 32px;
+      text-align: center;
+    }
+    .stats-widgets {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+    .stat-card {
+      background: #111a28;
+      padding: 20px;
+      border-radius: 28px;
+      min-width: 140px;
+    }
+    /* contact */
+    .contact-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      background: #0e1624;
+      border-radius: 36px;
+      padding: 40px;
+    }
+    .contact-info i {
+      width: 35px;
+      color: #3b9bcb;
+    }
+    .social-icons a {
+      font-size: 1.7rem;
+      margin-right: 20px;
+      color: #b4ceff;
+      transition: 0.2s;
+    }
+    .social-icons a:hover {
+      color: #6fc3df;
+      transform: scale(1.05);
+    }
+    footer {
+      text-align: center;
+      padding: 30px 0;
+      font-size: 0.85rem;
+      color: #8892b0;
+    }
+    @media (max-width: 780px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        gap: 16px;
+        margin-top: 20px;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+      .hero-image {
+        flex: 1;
+      }
+      .img-placeholder {
+        width: 200px;
+        height: 200px;
+      }
+      .section-title {
+        font-size: 1.7rem;
+      }
+    }
+    a {
+      color: inherit;
+    }
+    button, a {
+      cursor: pointer;
+    }
+    .cv-download, .github-link {
+      text-decoration: none;
+    }
+    .contact-info p {
+      margin: 16px 0;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-container">
+    <div class="logo">RJ<span style="color:#3b9bcb;">.</span></div>
+    <div class="menu-toggle" id="mobile-menu">
+      <i class="fas fa-bars"></i>
+    </div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+  <!-- Hero Section -->
+  <section id="home">
+    <div class="container hero">
+      <div class="hero-content">
+        <div class="hero-badge"><i class="fas fa-code"></i> Bachelor of Business & Information Technology |BBIT</div>
+        <h1>Makokha Ramadhan Juma<br><span style="font-size: 1.4rem;">Business Information Technology Student | Aspiring Cybersecurity & Networking Professional</span></h1>
+        <p class="hero-desc">I am a BBIT student passionate about technology, networking, cybersecurity, software development, and digital innovation. I enjoy solving real-world problems through technology while continuously expanding my skills in enterprise computing and information systems.</p>
+        <div class="cta-group">
+          <a href="#projects" class="btn btn-primary"><i class="fas fa-folder-open"></i> View Projects</a>
+          <a href="#" id="download-cv" class="btn btn-outline"><i class="fas fa-download"></i> Download CV</a>
+          <a href="#contact" class="btn btn-outline"><i class="fas fa-envelope"></i> Contact Me</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="img-placeholder">
+          <i class="fas fa-user-astronaut"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div style="background: #0e1624; border-radius: 32px; padding: 32px;">
+        <p style="font-size: 1.05rem; margin-bottom: 20px;">🔹 BBIT student at <strong>Mount Kenya University</strong>, Department of Enterprise Computing.<br>
+        🔹 Passionate about networking, cybersecurity, software development, and digital transformation.<br>
+        🔹 Strong interest in learning emerging technologies like cloud security and AI-driven analytics.<br>
+        🔹 Team player with leadership and workplace experience, blending interior design coordination and safety management with tech ambitions.</p>
+        <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 20px;">
+          <span><i class="fas fa-check-circle" style="color:#3b9bcb;"></i> Enterprise Systems</span>
+          <span><i class="fas fa-check-circle" style="color:#3b9bcb;"></i> IT Support & Networking</span>
+          <span><i class="fas fa-check-circle" style="color:#3b9bcb;"></i> Problem Solver</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">Technical & Professional Arsenal</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fas fa-microchip"></i></div>
+          <h3>Technical Skills</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Networking</span><span class="skill-tag">Cybersecurity</span><span class="skill-tag">Python</span>
+            <span class="skill-tag">C++</span><span class="skill-tag">Microsoft Office Suite</span><span class="skill-tag">IT Support</span>
+            <span class="skill-tag">Database Fundamentals</span><span class="skill-tag">Enterprise Computing</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fas fa-users"></i></div>
+          <h3>Professional Skills</h3>
+          <div class="skill-tags">
+            <span class="skill-tag">Team Leadership</span><span class="skill-tag">Communication</span>
+            <span class="skill-tag">Problem Solving</span><span class="skill-tag">Project Coordination</span>
+            <span class="skill-tag">Critical Thinking</span><span class="skill-tag">Time Management</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience">
+    <div class="container">
+      <h2 class="section-title">Work Experience & Leadership</h2>
+      <div class="exp-item">
+        <h3>RK Tech Premiers – Systems Security  & Safety Coordinator</h3>
+        <p><i class="fas fa-calendar-alt"></i> 2022 – Present</p>
+        <ul style="margin-top: 12px; margin-left: 20px;">
+          <li>Security Policies designing,planning and implementation</li>
+          <li>Workplace safety compliance and risk assessment protocols</li>
+          <li>Team coordination, client engagement, and project timelines</li>
+        </ul>
+      </div>
+      <div class="exp-item">
+        <h3>Team Leader – RK Tech Premiers </h3>
+        <p><i class="fas fa-trophy"></i> Leadership Highlights</p>
+        <ul style="margin-left: 20px;">
+          <li>Led cross-functional project teams to improve efficiency by 25%</li>
+          <li>Coordinated daily workflows and improved task execution & communication</li>
+          <li>Mentored junior designers, bridging creative & operational excellence</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education">
+    <div class="container">
+      <h2 class="section-title">Education</h2>
+      <div class="edu-item">
+        <h3><i class="fas fa-university"></i> Mount Kenya University</h3>
+        <p><strong>Bachelor of Business Information Technology (BBIT)</strong><br> Expected Graduation: 2028.<br> Current Academic Status: Year 3, Semester 1.<br>School of Computing & Informatics.
+        <br>Department of Enterprise Computing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section id="certifications">
+    <div class="container">
+      <h2 class="section-title">Certifications & Milestones</h2>
+      <div class="cert-grid">
+        <div class="cert-card"><i class="fas fa-network-wired" style="font-size: 2.5rem; color:#3b9bcb;"></i><h3>Cisco Networking Certification</h3><p>Networking essentials & CCNA pathway</p></div>
+        <div class="cert-card"><i class="fas fa-certificate" style="font-size: 2.5rem; color:#3b9bcb;"></i><h3>Future Certifications</h3><p>CompTIA Security+ (in progress) • Cloud Security • Python Institute</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="projects-grid" id="projects-grid">
+        <!-- Dynamic project cards via JS but static fallback -->
+      </div>
+    </div>
+  </section>
+
+  <!-- GitHub Statistics -->
+  <section id="github-stats">
+    <div class="container">
+      <h2 class="section-title">GitHub Analytics</h2>
+      <div class="github-stats">
+        <div class="stats-widgets">
+          <div class="stat-card"><i class="fab fa-github fa-2x"></i><h3 id="repo-count">12+</h3><p>Repositories</p></div>
+          <div class="stat-card"><i class="fas fa-chart-line"></i><h3>Python • JS • C++</h3><p>Top Languages</p></div>
+          <div class="stat-card"><i class="fas fa-chart-simple"></i><h3>Active Contributions</h3><p>Consistent learner</p></div>
+        </div>
+        <div style="margin-top: 30px; background:#0e1624; border-radius: 24px; padding: 20px;">
+          <i class="fas fa-chart-column"></i> Contribution Graph: <span style="color:#6fc3df;">16 contributions in last month (demo activity)</span>
+          <div style="display: flex; gap: 5px; margin-top: 15px; flex-wrap:wrap;">
+            <span style="background:#1f3a44; width: 12px; height:12px; border-radius:3px;"></span> Active coding & networking tools
+          </div>
+        </div>
+        <p style="margin-top: 18px;"><i class="fab fa-github"></i> <a href="#" id="github-profile-link" style="text-decoration: underline;">github.com/ramadhanjuma</a> (placeholder)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Career Goals -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Career Trajectory</h2>
+      <div style="background: linear-gradient(115deg, #0f1825, #0a111e); padding: 36px; border-radius: 48px; text-align: center;">
+        <i class="fas fa-chart-line" style="font-size: 2.2rem; color:#3b9bcb;"></i>
+        <p style="font-size: 1.2rem; max-width: 800px; margin: 20px auto 0;">My goal is to build a successful career in networking, cybersecurity, and enterprise technology solutions while contributing to innovative digital transformation projects across Africa and beyond.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Let’s Connect</h2>
+      <div class="contact-flex">
+        <div class="contact-info">
+          <p><i class="fas fa-envelope"></i> ramadhanmakokha.jumah@gmail.com</p>
+          <p><i class="fas fa-phone-alt"></i> 0768728892</p>
+          <p><i class="fas fa-map-marker-alt"></i> Thika, Kenya</p>
+          <div class="social-icons" style="margin-top: 20px;">
+            <a href="#" id="github-social" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="#" id="linkedin-social" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        <div style="flex:1"><p><i class="fas fa-paper-plane"></i> Open for internships, networking opportunities, and cybersecurity collaborations.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div style="margin-bottom: 16px;">
+      <i class="fab fa-github"></i> <i class="fab fa-linkedin"></i> <i class="fab fa-html5"></i>
+    </div>
+    <p>© 2026 Makokha Ramadhan Juma – All endeavors reserved.</p>
+    <p>Built with HTML5, CSS3, JavaScript and GitHub Pages | Modern Portfolio</p>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  const menuToggle = document.getElementById('mobile-menu');
+  const navLinks = document.getElementById('nav-links');
+  if(menuToggle) {
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  }
+
+  // Projects data
+  const projectsData = [
+    { name: "Network Design Project", desc: "Scalable campus network topology with VLANs & OSPF simulation.", tech: ["Cisco Packet Tracer", "Networking"], github: "#", demo: "#" },
+    { name: "Cybersecurity Awareness Platform", desc: "Educational web platform about phishing, MFA, and best practices.", tech: ["HTML/CSS", "JS", "Cybersecurity"], github: "#", demo: "#" },
+    { name: "Student Management System", desc: "Desktop app for managing student records, courses, and grades.", tech: ["Python", "Tkinter", "SQLite"], github: "#", demo: "#" },
+    { name: "Python Automation Scripts", desc: "Automated backup, network scanner, and log analyzer.", tech: ["Python", "Shell"], github: "#", demo: "#" },
+    { name: "Data Analysis Dashboard", desc: "Interactive dashboard for sales and enterprise metrics.", tech: ["Pandas", "Plotly", "Dash"], github: "#", demo: "#" }
+  ];
+  
+  const projectsContainer = document.getElementById('projects-grid');
+  if(projectsContainer) {
+    projectsContainer.innerHTML = '';
+    projectsData.forEach(proj => {
+      const card = document.createElement('div');
+      card.className = 'project-card';
+      card.innerHTML = `
+        <h3><i class="fas fa-code-branch"></i> ${proj.name}</h3>
+        <p>${proj.desc}</p>
+        <div class="project-tech">
+          ${proj.tech.map(t => `<span class="tech-badge">${t}</span>`).join('')}
+        </div>
+        <div class="project-links">
+          <a href="${proj.github}" target="_blank"><i class="fab fa-github"></i> Repo</a>
+          <a href="${proj.demo}" target="_blank"><i class="fas fa-external-link-alt"></i> Demo</a>
+        </div>
+      `;
+      projectsContainer.appendChild(card);
+    });
+  }
+
+  // Download CV simulation (create dummy text file)
+  const downloadBtn = document.getElementById('download-cv');
+  if(downloadBtn) {
+    downloadBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const cvContent = `Makokha Ramadhan Juma - CV\nEducation: BBIT, Mount Kenya University\nSkills: Networking, Cybersecurity, Python, Team Leadership\nExperience: Interior Designer & Safety Officer at RK Decors, Team Leader\nContact: ramadhanmakokha.jumah@gmail.com | 0768728892`;
+      const blob = new Blob([cvContent], {type: 'text/plain'});
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'Ramadhan_Juma_CV.txt';
+      link.click();
+      URL.revokeObjectURL(link.href);
+    });
+  }
+
+  // Placeholder GitHub & LinkedIn links
+  const githubSocial = document.getElementById('github-social');
+  const linkedinSocial = document.getElementById('linkedin-social');
+  const githubProfile = document.getElementById('github-profile-link');
+  if(githubSocial) githubSocial.href = "https://github.com/ramadhanjuma";
+  if(linkedinSocial) linkedinSocial.href = "https://linkedin.com/in/ramadhan-juma";
+  if(githubProfile) githubProfile.href = "https://github.com/ramadhanjuma";
+
+  // smooth anchor scroll
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href');
+      if(targetId === "#" || targetId === "") return;
+      const targetElem = document.querySelector(targetId);
+      if(targetElem) {
+        e.preventDefault();
+        targetElem.scrollIntoView({ behavior: 'smooth' });
+        if(navLinks.classList.contains('active')) navLinks.classList.remove('active');
+      }
+    });
+  });
+</script>
+</body>
+</html>
